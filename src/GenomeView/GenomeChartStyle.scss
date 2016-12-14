@@ -27,3 +27,10 @@ $categories:("labor_enter",#FF8A80), ("labor_leave",#FF80AB), ("finance_acq",#EA
     border-radius: 5px;
     pointer-events: none;
 }
+
+.stick {
+    &.highlighted{
+        fill: #FCD736;
+        z-index: 999;
+    }
+}

@@ -47,7 +47,9 @@ export function getGenes(companyObj) {
         if (filter(employee.title)) {
             var obj = {
                 date: new Date(employee.started),
-                title: employee.title
+                title: employee.title,
+                name: employee.firstName+" "+employee.lastName,
+                ID : 0
             }
             if (employee.started) {
                 hr.enter.push(obj);
@@ -58,12 +60,15 @@ export function getGenes(companyObj) {
 
     });
     // console.log(pastteam);
+    var IDcounter = 1;
     pastteam.forEach(function(employee, index) {
         if (filter(employee.title)) {
             if (employee.started) {
                 var enterObj = {
                     date: new Date(employee.started),
-                    title: employee.title
+                    title: employee.title,
+                    name: employee.firstName+" "+employee.lastName,
+                    ID : IDcounter
                 }
                 hr.enter.push(enterObj);
             }
@@ -71,14 +76,19 @@ export function getGenes(companyObj) {
             if (employee.ended) {
                 var leaveObj = {
                     date: new Date(employee.ended),
-                    title: employee.title
+                    title: employee.title,
+                    name: employee.firstName+" "+employee.lastName,
+                    ID : IDcounter
                 }
                 hr.leave.push(leaveObj);
             }
 
+            IDcounter++;
+
             if (employee.started === undefined && employee.ended === undefined) {
                 var obj = {
-                    title: employee.title
+                    title: employee.title,
+                    name: employee.firstName+" "+employee.lastName
                 }
                 hr.none.push(obj);
             }

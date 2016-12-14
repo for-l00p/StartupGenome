@@ -68,11 +68,16 @@ function drawChart(Genes, Width) {
 
     function createSubCategory(className, pos_Y) {
         var dataArray = Genes.getter(className);
+        console.log(dataArray);
+        
         gContainer.append("g")
             .selectAll("rect")
             .data(dataArray)
             .enter()
             .append("rect")
+            .attr("class", function (d) {
+                if(d.ID !== 0) return "stick id"+d.ID;
+            })
             .attr("height", 2*cubicSide)
             .attr("width", 2*cubicSide)
             .attr("x", function(d, i) {
@@ -83,7 +88,9 @@ function drawChart(Genes, Width) {
             .on("mouseover", function(d) {
                 var info;
                 if (className.includes("labor")) { //labor
-                    info = d.title;
+                    info = d.title + "<br/>" + d.name;
+                    var sel = d3.selectAll(".id"+d.ID);
+                    if(sel.size() === 2) sel.classed("highlighted", true);
                 } else if (className.includes("finance")) { //finance
                     if (className.includes("inv")) {
                         info = d.name + "<br/>" + d.money;
@@ -108,6 +115,10 @@ function drawChart(Genes, Width) {
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", 0);
+
+                if (className.includes("labor")) { //labor
+                    d3.selectAll(".id"+d.ID).classed("highlighted", false);
+                }
             });
     }
 
