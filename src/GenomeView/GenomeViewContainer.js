@@ -6,34 +6,18 @@ class GenomeViewContainer extends React.Component {
 	constructor(props) {
         super(props);  
         this.DBworker = props.DBworker;
-
-        this.state = {
-        	Genes : null
-        }
-    }
-
-    componentDidMount() {
-    	this.DBworker.getCompany("facebook", function (genes) {
-    		this.setState({
-    			Genes : genes
-    		})
-    	}.bind(this));
+        this.companies = props.companies;
     }
 
     render() {
-    	if(this.state.Genes) {
-    		return (
-    		<div>
-
-    			<GenomeChart genes={this.state.Genes} width={this.props.width} />;
-
-    			{this.props.companies && this.props.companies.map((d,i) => {
-    				return <p>{d}</p>;
-    			})}
-    		</div>);
-    	} else {
-    		return <div> GenomeView Loading ... </div>
-    	}
+    	
+    	return (
+    	<div>
+    		{this.props.companies && this.props.companies.map((d,i) => {
+    			return <GenomeChart key={d.perma} genes={d} width={this.props.width} onPanelRemoveHandler={this.props.onPanelRemoveHandler} />
+    		})}
+    	</div>);
+    	
     }
 }
 

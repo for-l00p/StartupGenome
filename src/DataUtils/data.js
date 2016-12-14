@@ -14,6 +14,8 @@ export function getGenes(companyObj) {
     // console.log(companyObj);
 
     var obj = companyObj;
+    var perma = obj.perma;
+    var name = obj.Name;
     var basics = obj.BasicInfo;
     var acquisitions = obj.Acquisitions
     var currenteam = obj.CurrentTeam
@@ -163,6 +165,8 @@ export function getGenes(companyObj) {
     // console.log(market);
 
     var Genes = {
+        name : name,
+        perma : perma,
         timeFrame: begin_end,
         labor: hr,
         financial: finance,

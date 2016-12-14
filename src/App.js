@@ -16,13 +16,15 @@ class App extends Component {
             leftColWidth: null,
             rightColWidth: null,
             companies: [],
-            value: null
+            current: null
         }
 
         firebase.initializeApp(CONFIG);
         this.initDBworker = this.initDBworker.bind(this);
         this.handleOnClick = this.handleOnClick.bind(this);
         this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleOnPanelRemove = this.handleOnPanelRemove.bind(this);
+        this.nameToPerma = this.nameToPerma.bind(this);
     }
 
     componentWillMount() {
@@ -40,24 +42,36 @@ class App extends Component {
         this.DBworker = new DBworker(firebase.database());
     }
 
+    nameToPerma(name) {
+    	return name;
+    }
+
     handleOnClick(event) {
-    	let companies = this.state.companies.slice();
-    	companies.push(this.state.value);
-    	this.setState({
-    		companies: companies
-    	});
+    	
+    	let perma = this.nameToPerma(this.state.current);
+    	console.log(perma);
+
+    	this.DBworker.getCompany(perma, function (companyGenes) {
+    		let companies = this.state.companies.slice();
+    		companies.push(companyGenes);
+    		this.setState({
+    			companies : companies
+    		})
+    		console.log(companies);
+    	}.bind(this));
+
     }
 
     handleOnChange(event) {
     	this.setState( {
-    		value: event.target.value
+    		current: event.target.value
     	});
     }
 
-    handleOnMouseOver(event) {
+    handleOnPanelRemove(index) {
     	let companies = this.state.companies.slice();
     	this.setState({
-    		companies: companies
+    		companies: companies.splice(index, 1)
     	});
     }
 
@@ -80,11 +94,11 @@ class App extends Component {
 				        <Button type="submit" onClick={this.handleOnClick} >Add</Button>
 			      	</Navbar.Form>
 		    	</Navbar.Collapse>
-		  	</Navbar>,
+		  	</Navbar>
 		  	<Grid>
 		         <Row>
 		    		<Col xs={14} md={10} ref="leftCol">
-		    			<GenomeViewContainer DBworker={this.DBworker} companies={this.state.companies} />
+		    			<GenomeViewContainer DBworker={this.DBworker} companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} />
 		    		</Col>
 		        	<Col xs={4} md={2} ref="rightCol">
 		        		<SideViewContainer DBworker={this.DBworker}  />

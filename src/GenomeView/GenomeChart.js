@@ -1,5 +1,6 @@
 import React from 'react';
 import * as d3 from "d3";
+import { Button, Glyphicon} from 'react-bootstrap';
 import ReactFauxDOM from 'react-faux-dom'
 import './GenomeChartStyle.scss';
 
@@ -125,11 +126,24 @@ class GenomeChart extends React.Component {
         super(props);
         this.genes = props.genes;
         this.width = props.width;
-        console.log(this.width);
+        // console.log(this.width);
+    }
+
+    handleOnClick(event) {
+
     }
 
     render() {
-        return drawChart(this.genes, this.width);
+        return (
+            <div className="rj-panel">
+                <div className="rj-panel-header">
+                    <p className="rj-label">{this.genes.name}</p>
+                    <Button  ><Glyphicon glyph="remove"/></Button>
+                </div>
+                {drawChart(this.genes, this.width)}
+            </div>
+            
+        );
     }
 }
 

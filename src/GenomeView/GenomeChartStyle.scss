@@ -1,6 +1,10 @@
 
 $categories:("labor_enter",#FF8A80), ("labor_leave",#FF80AB), ("finance_acq",#EA80FC), ("finance_inv",#9575CD), ("finance_frd",#7986CB), ("marketing_prd",#4FC3F7);
 
+
+html, body {
+    background-color: #f9f9f9;
+}
 @mixin rectColor($someColor) {
 	fill: rgba($someColor, 0.5);
 	&:hover {
@@ -26,4 +30,23 @@ $categories:("labor_enter",#FF8A80), ("labor_leave",#FF80AB), ("finance_acq",#EA
     border: 0px;
     border-radius: 5px;
     pointer-events: none;
+}
+
+.rj-label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rj-panel {
+    background-color: #fff;
+    border-radius: 4px;
+
+    padding: 16px;
+
+    margin-bottom: 32px;
+}
+
+.rj-panel-header {
+    display: flex;
+    justify-content: space-between;
 }
