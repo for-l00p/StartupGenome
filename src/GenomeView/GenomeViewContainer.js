@@ -6,7 +6,6 @@ class GenomeViewContainer extends React.Component {
 	constructor(props) {
         super(props);  
         this.DBworker = props.DBworker;
-        this.companies = props.companies;
 
         this.onProdcutHover = this.onProdcutHover.bind(this);
     }

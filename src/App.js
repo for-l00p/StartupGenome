@@ -16,7 +16,8 @@ class App extends Component {
             leftColWidth: null,
             rightColWidth: null,
             companies: [],
-            current: null
+            current: null,
+            product: null
         }
 
         firebase.initializeApp(CONFIG);
@@ -48,9 +49,7 @@ class App extends Component {
     }
 
     handleOnClick(event) {
-    	
     	let perma = this.nameToPerma(this.state.current);
-    	console.log(perma);
 
     	this.DBworker.getCompany(perma, function (companyGenes) {
     		let companies = this.state.companies.slice();
@@ -71,7 +70,6 @@ class App extends Component {
 
     //control panels
     handleOnPanelRemove(perma) {
-    	console.log(perma);
     	let companies = this.state.companies.slice();
     	let idx;
     	for (var i = 0; i < companies.length; i++) {
@@ -91,7 +89,12 @@ class App extends Component {
 
     //control sideview
     handleOnProductHover(productPerma) {
-    	console.log(productPerma);
+    	this.DBworker.getProduct(productPerma, function (productObj) {
+    		// console.log(productObj);
+    		this.setState({
+    			product : productObj
+    		})
+    	}.bind(this));
     }
 
     render() {
@@ -120,9 +123,9 @@ class App extends Component {
 		    			<GenomeViewContainer companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} onProductHover={this.handleOnProductHover} />
 		    		</Col>
 		        	<Col xs={4} md={2} ref="rightCol">
-		        		<SideViewContainer DBworker={this.DBworker}  />
+		        		<SideViewContainer product={this.state.product} />
 		        	</Col>
-		        </Row> 
+		        </Row>
 		    </Grid>
 		    </div>
         );

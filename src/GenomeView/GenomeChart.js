@@ -100,7 +100,7 @@ function drawChart(Genes, Width, onProductHover) {
                     } else { //product
                         info = d.name;
                     }
-                } else {
+                } else {//product
                     info = d.name;
                     onProductHover(d.perma);
                 }
