@@ -69,7 +69,7 @@ function drawChart(Genes, Width) {
 
     function createSubCategory(className, pos_Y) {
         var dataArray = Genes.getter(className);
-        console.log(dataArray);
+        // console.log(dataArray);
         
         gContainer.append("g")
             .selectAll("rect")
@@ -138,10 +138,12 @@ class GenomeChart extends React.Component {
         this.genes = props.genes;
         this.width = props.width;
         // console.log(this.width);
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
     handleOnClick(event) {
-
+        // console.log(this.genes.perma);
+        this.props.onPanelRemoveHandler(this.genes.perma)
     }
 
     render() {
@@ -149,7 +151,7 @@ class GenomeChart extends React.Component {
             <div className="rj-panel">
                 <div className="rj-panel-header">
                     <p className="rj-label">{this.genes.name}</p>
-                    <Button  ><Glyphicon glyph="remove"/></Button>
+                    <Button  onClick={this.handleOnClick} ><Glyphicon glyph="remove"/></Button>
                 </div>
                 {drawChart(this.genes, this.width)}
             </div>

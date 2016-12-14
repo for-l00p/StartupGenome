@@ -11,7 +11,7 @@ function filter(title) {
 }
 
 export function getGenes(companyObj) {
-    // console.log(companyObj);
+    console.log(companyObj);
     var obj = companyObj;
     var perma = obj.perma;
     var name = obj.Name;
@@ -33,10 +33,14 @@ export function getGenes(companyObj) {
     var begin_end = [{
         date: new Date(basics.funded),
         type: "funded"
-    }, {
-        date: new Date(IPO.date),
-        type: "IPO"
-    }, ];
+    } ];
+
+    if(IPO !== undefined) {
+        begin_end.push({
+            date: new Date(IPO.date),
+            type: "IPO"
+        })
+    }
 
     //category 2  current, past team
     var hr = {
@@ -49,8 +53,8 @@ export function getGenes(companyObj) {
             var obj = {
                 date: new Date(employee.started),
                 title: employee.title,
-                name: employee.firstName+" "+employee.lastName,
-                ID : 0
+                name: employee.firstName + " " + employee.lastName,
+                ID: 0
             }
             if (employee.started) {
                 hr.enter.push(obj);
@@ -68,8 +72,8 @@ export function getGenes(companyObj) {
                 var enterObj = {
                     date: new Date(employee.started),
                     title: employee.title,
-                    name: employee.firstName+" "+employee.lastName,
-                    ID : IDcounter
+                    name: employee.firstName + " " + employee.lastName,
+                    ID: IDcounter
                 }
                 hr.enter.push(enterObj);
             }
@@ -78,8 +82,8 @@ export function getGenes(companyObj) {
                 var leaveObj = {
                     date: new Date(employee.ended),
                     title: employee.title,
-                    name: employee.firstName+" "+employee.lastName,
-                    ID : IDcounter
+                    name: employee.firstName + " " + employee.lastName,
+                    ID: IDcounter
                 }
                 hr.leave.push(leaveObj);
             }
@@ -89,7 +93,7 @@ export function getGenes(companyObj) {
             if (employee.started === undefined && employee.ended === undefined) {
                 var obj = {
                     title: employee.title,
-                    name: employee.firstName+" "+employee.lastName
+                    name: employee.firstName + " " + employee.lastName
                 }
                 hr.none.push(obj);
             }
@@ -106,50 +110,61 @@ export function getGenes(companyObj) {
         inv: [],
         frd: []
     };
-    acquisitions.forEach(function(acquisition, index) {
-        if (acquisition.announcedDate) {
-            var acqObj = {
-                date: new Date(acquisition.announcedDate),
-                name: acquisition.acquireeName
+    if (acquisitions !== undefined) {
+        acquisitions.forEach(function(acquisition, index) {
+            if (acquisition.announcedDate) {
+                var acqObj = {
+                    date: new Date(acquisition.announcedDate),
+                    name: acquisition.acquireeName
+                }
+                finance.acq.push(acqObj);
+            } else {
+                console.log('acquisition with no date', acquisition);
+                // finance.none.push({
+                //  name: acquisition.acquireeName
+                // });
             }
-            finance.acq.push(acqObj);
-        } else {
-            console.log('acquisition with no date', acquisition);
-            // finance.none.push({
-            // 	name: acquisition.acquireeName
-            // });
-        }
-    });
-    investments.forEach(function(investment, index) {
-        if (investment.announcedDate) {
-            var invObj = {
-                date: new Date(investment.announcedDate),
-                name: investment.investedOrg,
-                money: investment.moneyRaised
+        });
+        finance.acq.sort(compareDate);
+    }
+    if (investments !== undefined) {
+        investments.forEach(function(investment, index) {
+            if (investment.announcedDate) {
+                var invObj = {
+                    date: new Date(investment.announcedDate),
+                    name: investment.investedOrg,
+                    money: investment.moneyRaised
+                }
+                finance.inv.push(invObj);
+            } else {
+                console.log('investment with no date', investment);
+                // finance.none.push({
+                //  name: investment.investedOrg
+                // });
             }
-            finance.inv.push(invObj);
-        } else {
-            console.log('investment with no date', investment);
-            // finance.none.push({
-            // 	name: investment.investedOrg
-            // });
-        }
-    });
-    fundingRounds.forEach(function(funding, index) {
-        if (funding.announcedDate) {
-            var frdObj = {
-                date: new Date(funding.announcedDate),
-                type: funding.funding_type,
-                money: funding.moneyRaised
+        });
+        finance.inv.sort(compareDate);
+    }
+
+    if (fundingRounds !== undefined) {
+        fundingRounds.forEach(function(funding, index) {
+            if (funding.announcedDate) {
+                var frdObj = {
+                    date: new Date(funding.announcedDate),
+                    type: funding.funding_type,
+                    money: funding.moneyRaised
+                }
+                finance.frd.push(frdObj);
+            } else {
+                console.log('funding with no date', funding);
             }
-            finance.frd.push(frdObj);
-        } else {
-            console.log('funding with no date', funding);
-        }
-    });
-    finance.acq.sort(compareDate);
-    finance.inv.sort(compareDate);
-    finance.frd.sort(compareDate);
+        });
+        finance.frd.sort(compareDate);
+    }
+
+    // finance.acq.sort(compareDate);
+    // finance.inv.sort(compareDate);
+    // finance.frd.sort(compareDate);
     // console.log(finance);
 
     //category 4 products
@@ -157,25 +172,28 @@ export function getGenes(companyObj) {
         prd: [],
         none: []
     };
-    products.forEach(function(product, index) {
-        if (product.launch) {
-            var prdObj = {
-                date: new Date(product.launch),
-                name: product.name
+    if (products !== undefined) {
+        products.forEach(function(product, index) {
+            if (product.launch) {
+                var prdObj = {
+                    date: new Date(product.launch),
+                    name: product.name
+                }
+                marketing.prd.push(prdObj);
+            } else {
+                marketing.none.push({
+                    name: product.name
+                });
             }
-            marketing.prd.push(prdObj);
-        } else {
-            marketing.none.push({
-                name: product.name
-            });
-        }
-    });
-    marketing.prd.sort(compareDate);
+        });
+        marketing.prd.sort(compareDate);
+    }
+    
     // console.log(market);
 
     var Genes = {
-        name : name,
-        perma : perma,
+        name: name,
+        perma: perma,
         timeFrame: begin_end,
         labor: hr,
         financial: finance,
@@ -189,15 +207,27 @@ export function getGenes(companyObj) {
             return d3.max(lenArray);
         },
         minDate: function() {
-            var dateArray = [begin_end[0].date, hr.enter[0].date, finance.acq[0].date,
-                finance.inv[0].date, finance.frd[0].date, marketing.prd[0].date
-            ];
+            var dateArray = [begin_end[0].date];
+
+            if(hr.enter.length > 0) dateArray.push(hr.enter[0].date);
+            if(finance.acq.length > 0) dateArray.push(finance.acq[0].date);
+            if(finance.inv.length > 0) dateArray.push(finance.inv[0].date);
+            if(finance.frd.length > 0) dateArray.push(finance.frd[0].date);
+            if(marketing.prd.length > 0) dateArray.push(marketing.prd[0].date);
+
+            // console.log(dateArray);
+
             return d3.min(dateArray);
         },
         maxDate: function() {
-            var dateArray = [begin_end[begin_end.length - 1].date, hr.enter[hr.enter.length - 1].date, finance.acq[finance.acq.length - 1].date,
-                finance.inv[finance.inv.length - 1].date, finance.frd[finance.frd.length - 1].date, marketing.prd[marketing.prd.length - 1].date
-            ];
+            var dateArray = [begin_end[begin_end.length - 1].date];
+            
+            if(hr.enter.length > 0) dateArray.push(hr.enter[hr.enter.length - 1].date);
+            if(finance.acq.length > 0) dateArray.push(finance.acq[finance.acq.length - 1].date);
+            if(finance.inv.length > 0) dateArray.push(finance.inv[finance.inv.length - 1].date);
+            if(finance.frd.length > 0) dateArray.push(finance.frd[finance.frd.length - 1].date);
+            if(marketing.prd.length > 0) dateArray.push(marketing.prd[marketing.prd.length - 1].date);
+
             return d3.max(dateArray);
         },
         getter: function(arrayName) {

@@ -68,10 +68,22 @@ class App extends Component {
     	});
     }
 
-    handleOnPanelRemove(index) {
+    handleOnPanelRemove(perma) {
+    	console.log(perma);
     	let companies = this.state.companies.slice();
+    	let idx;
+    	for (var i = 0; i < companies.length; i++) {
+    		if(companies[i].perma === perma) {
+    			idx = i;
+    			break;
+    		}
+    	}
+    	// console.log("before ",companies);
+    	companies.splice(idx, 1);
+    	// console.log(idx);
+    	// console.log("after ",companies);
     	this.setState({
-    		companies: companies.splice(index, 1)
+    		companies: companies
     	});
     }
 
@@ -98,7 +110,7 @@ class App extends Component {
 		  	<Grid>
 		         <Row>
 		    		<Col xs={14} md={10} ref="leftCol">
-		    			<GenomeViewContainer DBworker={this.DBworker} companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} />
+		    			<GenomeViewContainer companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} />
 		    		</Col>
 		        	<Col xs={4} md={2} ref="rightCol">
 		        		<SideViewContainer DBworker={this.DBworker}  />
