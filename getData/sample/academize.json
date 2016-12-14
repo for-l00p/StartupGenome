@@ -1,0 +1,37 @@
+{
+  "BasicInfo": {
+    "funded": "2011-06-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "seed",
+      "series": null,
+      "announcedDate": "2012-06-01",
+      "moneyRaised": null
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "CEO and founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Isaac",
+      "lastName": "Moshe"
+    },
+    {
+      "title": "CTO and founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Giv",
+      "lastName": "Parvaneh"
+    }
+  ],
+  "PastTeam": []
+}

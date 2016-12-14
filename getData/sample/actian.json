@@ -1,0 +1,86 @@
+{
+  "BasicInfo": {
+    "funded": "1980-01-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [],
+  "Acquisitions": [
+    {
+      "price": null,
+      "paymentType": null,
+      "announcedDate": "2013-04-26",
+      "acquireeName": "ParAccel"
+    },
+    {
+      "price": null,
+      "paymentType": null,
+      "announcedDate": "2012-12-21",
+      "acquireeName": "Versant"
+    }
+  ],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "CEO",
+      "started": null,
+      "ended": null,
+      "firstName": "Steve",
+      "lastName": "Shine"
+    },
+    {
+      "title": "Chief Technology Officer",
+      "started": null,
+      "ended": null,
+      "firstName": "Mike",
+      "lastName": "Hoskins"
+    }
+  ],
+  "PastTeam": [
+    {
+      "title": "Vice President of Marketing, ParAccel Platform Group",
+      "started": "2013-01-01",
+      "ended": null,
+      "firstName": "John",
+      "lastName": "Santaferraro"
+    },
+    {
+      "title": "Senior Manager, Corporate and Field Marketing (Contract, formerly Ingres)",
+      "started": "2007-02-01",
+      "ended": "2008-02-01",
+      "firstName": "Serenity",
+      "lastName": "Thompson"
+    },
+    {
+      "title": "VP, Global Sales Engineering",
+      "started": "2013-04-01",
+      "ended": "2014-09-30",
+      "firstName": "Ravi",
+      "lastName": "Ramanathan"
+    },
+    {
+      "title": "CFO (Ingres Corporation)",
+      "started": "2006-03-01",
+      "ended": "2009-08-01",
+      "firstName": "Thomas",
+      "lastName": "Berquist"
+    },
+    {
+      "title": "UX Designer",
+      "started": "2014-02-03",
+      "ended": "2014-10-31",
+      "firstName": "Mark",
+      "lastName": "Decker"
+    },
+    {
+      "title": "VP Corporate Marketing",
+      "started": "2012-06-01",
+      "ended": "2013-05-01",
+      "firstName": "Kevin",
+      "lastName": "Cox"
+    }
+  ]
+}

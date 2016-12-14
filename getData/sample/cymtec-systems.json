@@ -1,0 +1,64 @@
+{
+  "BasicInfo": {
+    "funded": "2000-01-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "debt_financing",
+      "series": null,
+      "announcedDate": "2013-08-25",
+      "moneyRaised": 1000000
+    },
+    {
+      "funding_type": "seed",
+      "series": null,
+      "announcedDate": "2012-03-20",
+      "moneyRaised": 1314666
+    },
+    {
+      "funding_type": "venture",
+      "series": null,
+      "announcedDate": "2010-08-17",
+      "moneyRaised": 1712225
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "CTO",
+      "started": null,
+      "ended": null,
+      "firstName": null,
+      "lastName": null
+    }
+  ],
+  "PastTeam": [
+    {
+      "title": "Co-Founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Andrew",
+      "lastName": "S. Rubin"
+    },
+    {
+      "title": "Director, Sales",
+      "started": "2005-01-01",
+      "ended": "2006-01-01",
+      "firstName": "Pankaj",
+      "lastName": "Jain"
+    },
+    {
+      "title": "Director",
+      "started": "2005-01-01",
+      "ended": "2006-06-01",
+      "firstName": "Pankaj",
+      "lastName": "Jain"
+    }
+  ]
+}

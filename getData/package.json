@@ -1,0 +1,21 @@
+{
+  "name": "startup_genome",
+  "version": "1.0.0",
+  "description": "a visulization project based on crunchbase API",
+  "main": "companyInfo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RJ",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.2",
+    "co": "^4.6.0",
+    "csv-parser": "^1.11.0",
+    "json-fu": "^0.2.1",
+    "jsonfile": "^2.4.0",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.5",
+    "request": "^2.75.0"
+  }
+}

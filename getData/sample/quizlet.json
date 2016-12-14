@@ -1,0 +1,83 @@
+{
+  "BasicInfo": {
+    "funded": "2007-01-17",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "venture",
+      "series": "A",
+      "announcedDate": "2015-11-23",
+      "moneyRaised": 12000000
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [
+    {
+      "name": "Quizlet.com",
+      "perma": "quizlet",
+      "launch": null,
+      "close": null,
+      "description": "Quizlet.com was launched in 2007",
+      "newsCount": 0,
+      "news": []
+    }
+  ],
+  "CurrentTeam": [
+    {
+      "title": "CEO",
+      "started": "2016-05-01",
+      "ended": null,
+      "firstName": "Matthew",
+      "lastName": "Glotzbach"
+    },
+    {
+      "title": "Mobile Engineer",
+      "started": "2013-05-01",
+      "ended": null,
+      "firstName": "Shane",
+      "lastName": "Mooney"
+    },
+    {
+      "title": "General Manager",
+      "started": "2012-01-01",
+      "ended": null,
+      "firstName": "Thompson",
+      "lastName": "Paine"
+    },
+    {
+      "title": "VP Engineering",
+      "started": "2016-10-01",
+      "ended": null,
+      "firstName": "Tim A.",
+      "lastName": "Miller"
+    },
+    {
+      "title": "Founder and CTO",
+      "started": "2007-01-01",
+      "ended": null,
+      "firstName": "Andrew",
+      "lastName": "Sutherland"
+    }
+  ],
+  "PastTeam": [
+    {
+      "title": "Engineering Lead",
+      "started": "2010-01-01",
+      "ended": "2011-12-01",
+      "firstName": "Phil",
+      "lastName": "Freo"
+    },
+    {
+      "title": "Design Director",
+      "started": "2011-01-01",
+      "ended": "2014-03-01",
+      "firstName": "Anand",
+      "lastName": "Sharma"
+    }
+  ]
+}

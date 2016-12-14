@@ -1,0 +1,30 @@
+{
+  "BasicInfo": {
+    "funded": "2012-10-01",
+    "isClosed": true,
+    "closed": null
+  },
+  "FundingRounds": [],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "CEO & CO - Founder",
+      "started": "2012-01-01",
+      "ended": null,
+      "firstName": "Jamil",
+      "lastName": "Moledina"
+    },
+    {
+      "title": "COO & Co - Founder",
+      "started": "2012-01-01",
+      "ended": null,
+      "firstName": "James",
+      "lastName": "Kelm"
+    }
+  ],
+  "PastTeam": []
+}

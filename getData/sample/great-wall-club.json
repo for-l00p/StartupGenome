@@ -1,0 +1,174 @@
+{
+  "BasicInfo": {
+    "funded": "2008-03-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "venture",
+      "series": "C",
+      "announcedDate": "2015-01-01",
+      "moneyRaised": null
+    },
+    {
+      "funding_type": "venture",
+      "series": null,
+      "announcedDate": "2014-01-01",
+      "moneyRaised": null
+    },
+    {
+      "funding_type": "venture",
+      "series": "A",
+      "announcedDate": "2012-01-01",
+      "moneyRaised": null
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [
+    {
+      "moneyInvested": null,
+      "isLead": null,
+      "fundingType": "venture",
+      "series": "A",
+      "announcedDate": "2015-11-26",
+      "closedDate": null,
+      "moneyRaised": 13400000,
+      "investedOrg": "GOQii"
+    },
+    {
+      "moneyInvested": null,
+      "isLead": false,
+      "fundingType": "venture",
+      "series": "B",
+      "announcedDate": "2015-10-30",
+      "closedDate": null,
+      "moneyRaised": 8000000,
+      "investedOrg": "Qraved"
+    },
+    {
+      "moneyInvested": null,
+      "isLead": false,
+      "fundingType": "venture",
+      "series": "C",
+      "announcedDate": "2015-04-23",
+      "closedDate": null,
+      "moneyRaised": 14000000,
+      "investedOrg": "3D Robotics"
+    },
+    {
+      "moneyInvested": null,
+      "isLead": false,
+      "fundingType": "venture",
+      "series": "C",
+      "announcedDate": "2015-02-25",
+      "closedDate": null,
+      "moneyRaised": 50000000,
+      "investedOrg": "3D Robotics"
+    }
+  ],
+  "Products": [
+    {
+      "name": "The Global Mobile Internet Conference",
+      "perma": "the-global-mobile-internet-conference",
+      "launch": "2009-01-01",
+      "close": null,
+      "description": "The Global Mobile Internet Conference is a mobile industry conference for mobile developers, executives, entrepreneurs, and investors.",
+      "newsCount": 4,
+      "news": [
+        {
+          "title": "$1 Million Designated to World Changing Startups in 2016",
+          "date": "2016-02-13"
+        },
+        {
+          "title": "$1 Million Designated to World Changing Startups in 2016",
+          "date": "2016-01-21"
+        },
+        {
+          "title": "$1 Million Designated to World Changing Startups in 2016",
+          "date": "2016-01-20"
+        },
+        {
+          "title": "Tech and Media Events You Should Be Attending [Discounts]",
+          "date": "2012-05-04"
+        }
+      ]
+    }
+  ],
+  "CurrentTeam": [
+    {
+      "title": "President (China) & Co-Founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Bo",
+      "lastName": "Yiqun"
+    },
+    {
+      "title": "General Manager for Southeast Asia",
+      "started": null,
+      "ended": null,
+      "firstName": "Lawrence",
+      "lastName": "Wong"
+    },
+    {
+      "title": "Co-Founder, President",
+      "started": "2009-10-01",
+      "ended": null,
+      "firstName": "Barrett",
+      "lastName": "Parkman"
+    },
+    {
+      "title": "CEO & Founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Wen",
+      "lastName": "Chu"
+    },
+    {
+      "title": "RoboMaster",
+      "started": null,
+      "ended": null,
+      "firstName": "Daryl",
+      "lastName": "Yong"
+    },
+    {
+      "title": "COO, GWC India",
+      "started": null,
+      "ended": null,
+      "firstName": "Gurpreet",
+      "lastName": "Singh"
+    },
+    {
+      "title": "Co-CEO",
+      "started": null,
+      "ended": null,
+      "firstName": "E",
+      "lastName": "Hao"
+    },
+    {
+      "title": "Board Director",
+      "started": null,
+      "ended": null,
+      "firstName": "Takeshi",
+      "lastName": "Natsuno"
+    }
+  ],
+  "PastTeam": [
+    {
+      "title": "Vice President & Co-Founder",
+      "started": "2008-01-01",
+      "ended": "2012-01-01",
+      "firstName": "Song",
+      "lastName": "Wei"
+    },
+    {
+      "title": "President & Founder of GWC US",
+      "started": "2012-01-01",
+      "ended": "2014-01-01",
+      "firstName": "David",
+      "lastName": "Cao"
+    }
+  ]
+}

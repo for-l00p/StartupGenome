@@ -1,0 +1,43 @@
+{
+  "BasicInfo": {
+    "funded": "1997-01-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [],
+  "Acquisitions": [
+    {
+      "price": null,
+      "paymentType": null,
+      "announcedDate": "2010-12-14",
+      "acquireeName": "E-Care Technology"
+    },
+    {
+      "price": null,
+      "paymentType": null,
+      "announcedDate": "2010-06-22",
+      "acquireeName": "Pinestar Electronics"
+    }
+  ],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "CEO",
+      "started": null,
+      "ended": null,
+      "firstName": "John",
+      "lastName": "Hwang"
+    },
+    {
+      "title": "Founder & President",
+      "started": null,
+      "ended": null,
+      "firstName": "Kenneth",
+      "lastName": "Cheng"
+    }
+  ],
+  "PastTeam": []
+}

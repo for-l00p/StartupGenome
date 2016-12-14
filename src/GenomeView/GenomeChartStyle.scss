@@ -1,0 +1,29 @@
+
+$categories:("labor_enter",#FF8A80), ("labor_leave",#FF80AB), ("finance_acq",#EA80FC), ("finance_inv",#9575CD), ("finance_frd",#7986CB), ("marketing_prd",#4FC3F7);
+
+@mixin rectColor($someColor) {
+	fill: rgba($someColor, 0.5);
+	&:hover {
+		fill: darken($someColor, 20%);
+	}
+}
+
+@each $name, $color in $categories {
+	.#{$name} {
+		@include rectColor($color);
+	}
+}
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    min-width: 80px;
+    height: auto;
+    padding: 8px;
+    font: 12px Helvetica;
+    background: rgba(#263238, 0.8);
+    color: #CFD8DC;
+    border: 0px;
+    border-radius: 5px;
+    pointer-events: none;
+}

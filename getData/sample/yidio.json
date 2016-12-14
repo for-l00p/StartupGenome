@@ -1,0 +1,73 @@
+{
+  "BasicInfo": {
+    "funded": "2008-06-04",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "seed",
+      "series": null,
+      "announcedDate": "2009-11-12",
+      "moneyRaised": 350000
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [],
+  "CurrentTeam": [
+    {
+      "title": "Founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Adam",
+      "lastName": "Eatros"
+    },
+    {
+      "title": "Co-founder/COO",
+      "started": "2007-11-01",
+      "ended": null,
+      "firstName": "Adam",
+      "lastName": "Eatros"
+    },
+    {
+      "title": "Founder",
+      "started": null,
+      "ended": null,
+      "firstName": "Brandon",
+      "lastName": "Eatros"
+    },
+    {
+      "title": "Member Board of Directors",
+      "started": "2009-05-01",
+      "ended": null,
+      "firstName": "Alan",
+      "lastName": "Warms"
+    },
+    {
+      "title": "CEO/Co-Founder",
+      "started": "2007-11-01",
+      "ended": null,
+      "firstName": "Brandon",
+      "lastName": "Eatros"
+    }
+  ],
+  "PastTeam": [
+    {
+      "title": "General Manager",
+      "started": "2011-04-11",
+      "ended": null,
+      "firstName": "Greg",
+      "lastName": "Hintz"
+    },
+    {
+      "title": "Product Director",
+      "started": "2010-06-01",
+      "ended": "2011-09-01",
+      "firstName": "Mitch",
+      "lastName": "McAlister"
+    }
+  ]
+}

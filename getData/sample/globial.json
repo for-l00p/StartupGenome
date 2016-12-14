@@ -1,0 +1,53 @@
+{
+  "BasicInfo": {
+    "funded": "2010-01-01",
+    "isClosed": false,
+    "closed": null
+  },
+  "FundingRounds": [
+    {
+      "funding_type": "seed",
+      "series": null,
+      "announcedDate": "2013-05-01",
+      "moneyRaised": null
+    },
+    {
+      "funding_type": "angel",
+      "series": null,
+      "announcedDate": "2009-01-01",
+      "moneyRaised": null
+    }
+  ],
+  "Acquisitions": [],
+  "AcquiredBy": null,
+  "IPO": null,
+  "Investments": [],
+  "Products": [
+    {
+      "name": "Globial Business Network",
+      "perma": "globial-business-network",
+      "launch": null,
+      "close": null,
+      "description": "Globial Business Network was added to CrunchBase in 2011",
+      "newsCount": 0,
+      "news": []
+    }
+  ],
+  "CurrentTeam": [
+    {
+      "title": "Founder & CEO",
+      "started": null,
+      "ended": null,
+      "firstName": "Umut",
+      "lastName": "Yildirim"
+    },
+    {
+      "title": "Founder & CTO",
+      "started": null,
+      "ended": null,
+      "firstName": "Chadi",
+      "lastName": "Abousaleh"
+    }
+  ],
+  "PastTeam": []
+}
