@@ -7,6 +7,12 @@ class GenomeViewContainer extends React.Component {
         super(props);  
         this.DBworker = props.DBworker;
         this.companies = props.companies;
+
+        this.onProdcutHover = this.onProdcutHover.bind(this);
+    }
+
+    onProdcutHover(perma) {
+    	this.props.onProductHover(perma);
     }
 
     render() {
@@ -14,7 +20,7 @@ class GenomeViewContainer extends React.Component {
     	return (
     	<div>
     		{this.props.companies && this.props.companies.map((d,i) => {
-    			return <GenomeChart key={d.perma} genes={d} width={this.props.width} onPanelRemoveHandler={this.props.onPanelRemoveHandler} />
+    			return <GenomeChart key={d.perma} genes={d} width={this.props.width} onPanelRemoveHandler={this.props.onPanelRemoveHandler} onProdcutHover={this.onProdcutHover} />
     		})}
     	</div>);
     	

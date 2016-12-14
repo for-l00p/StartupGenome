@@ -8,7 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin(); //Needed for onTouchTap  http://stackoverflow.com/a/34015469/988941
 
 
-function drawChart(Genes, Width) {
+function drawChart(Genes, Width, onProductHover) {
     // console.log("in drawChart ", Genes);
     var formatTime = d3.timeFormat("%B %d, %Y");
     //create FauxDom element for D3
@@ -80,7 +80,7 @@ function drawChart(Genes, Width) {
                 if(d.ID !== 0) return "stick id"+d.ID;
             })
             .attr("height", 2*cubicSide)
-            .attr("width", 2*cubicSide)
+            .attr("width", cubicSide)
             .attr("x", function(d, i) {
                 return xScale(d.date);
             })
@@ -102,6 +102,7 @@ function drawChart(Genes, Width) {
                     }
                 } else {
                     info = d.name;
+                    onProductHover(d.perma);
                 }
 
                 tooltip.transition()
@@ -109,7 +110,7 @@ function drawChart(Genes, Width) {
                     .style("opacity", .9);
 
                 tooltip.html(formatTime(d.date) + "<br/>" + info)
-                    .style("left", (d3.event.pageX + 10) + "px")
+                    .style("left", (d3.event.pageX + 20) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             })
             .on("mouseout", function(d) {
@@ -137,13 +138,18 @@ class GenomeChart extends React.Component {
         super(props);
         this.genes = props.genes;
         this.width = props.width;
+        console.log(props);
         // console.log(this.width);
         this.handleOnClick = this.handleOnClick.bind(this);
+        this.handleOnProductHover = this.handleOnProductHover.bind(this)
     }
 
     handleOnClick(event) {
-        // console.log(this.genes.perma);
-        this.props.onPanelRemoveHandler(this.genes.perma)
+        this.props.onPanelRemoveHandler(this.genes.perma);
+    }
+
+    handleOnProductHover(prodcutPerma) {
+        this.props.onProdcutHover(prodcutPerma);
     }
 
     render() {
@@ -153,7 +159,7 @@ class GenomeChart extends React.Component {
                     <p className="rj-label">{this.genes.name}</p>
                     <Button  onClick={this.handleOnClick} ><Glyphicon glyph="remove"/></Button>
                 </div>
-                {drawChart(this.genes, this.width)}
+                {drawChart(this.genes, this.width, this.handleOnProductHover)}
             </div>
             
         );

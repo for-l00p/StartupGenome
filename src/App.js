@@ -24,6 +24,7 @@ class App extends Component {
         this.handleOnClick = this.handleOnClick.bind(this);
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleOnPanelRemove = this.handleOnPanelRemove.bind(this);
+        this.handleOnProductHover = this.handleOnProductHover.bind(this);
         this.nameToPerma = this.nameToPerma.bind(this);
     }
 
@@ -68,6 +69,7 @@ class App extends Component {
     	});
     }
 
+    //control panels
     handleOnPanelRemove(perma) {
     	console.log(perma);
     	let companies = this.state.companies.slice();
@@ -85,6 +87,11 @@ class App extends Component {
     	this.setState({
     		companies: companies
     	});
+    }
+
+    //control sideview
+    handleOnProductHover(productPerma) {
+    	console.log(productPerma);
     }
 
     render() {
@@ -110,7 +117,7 @@ class App extends Component {
 		  	<Grid>
 		         <Row>
 		    		<Col xs={14} md={10} ref="leftCol">
-		    			<GenomeViewContainer companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} />
+		    			<GenomeViewContainer companies={this.state.companies} onPanelRemoveHandler={this.handleOnPanelRemove} onProductHover={this.handleOnProductHover} />
 		    		</Col>
 		        	<Col xs={4} md={2} ref="rightCol">
 		        		<SideViewContainer DBworker={this.DBworker}  />

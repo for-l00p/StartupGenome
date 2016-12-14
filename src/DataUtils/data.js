@@ -174,15 +174,18 @@ export function getGenes(companyObj) {
     };
     if (products !== undefined) {
         products.forEach(function(product, index) {
+            console.log(product);
             if (product.launch) {
                 var prdObj = {
                     date: new Date(product.launch),
-                    name: product.name
+                    name: product.name,
+                    perma : product.perma
                 }
                 marketing.prd.push(prdObj);
             } else {
                 marketing.none.push({
-                    name: product.name
+                    name: product.name,
+                    perma : product.perma
                 });
             }
         });
