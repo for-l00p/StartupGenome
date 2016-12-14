@@ -12,7 +12,6 @@ function filter(title) {
 
 export function getGenes(companyObj) {
     // console.log(companyObj);
-
     var obj = companyObj;
     var perma = obj.perma;
     var name = obj.Name;
