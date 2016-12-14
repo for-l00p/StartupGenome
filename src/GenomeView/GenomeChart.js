@@ -63,7 +63,7 @@ function drawChart(Genes, Width) {
     var yAxis = d3.axisLeft(yScale).tickValues(categoryNames);
     svgContainer.append('g').call(yAxis);
 
-    var tooltip = d3.select(svgNode).append("div")
+    var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
 
