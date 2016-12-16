@@ -89,6 +89,7 @@ class App extends Component {
 
     //control sideview
     handleOnProductHover(productPerma) {
+    	console.log(productPerma);
     	this.DBworker.getProduct(productPerma, function (productObj) {
     		// console.log(productObj);
     		this.setState({

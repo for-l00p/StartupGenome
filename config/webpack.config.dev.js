@@ -145,10 +145,11 @@ module.exports = {
         }
       },
       //RJ added for auto compiling of sass
+      //https://github.com/jtangelder/sass-loader
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-      },
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      }
     ]
   },
   
