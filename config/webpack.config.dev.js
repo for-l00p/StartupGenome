@@ -8,6 +8,7 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -147,8 +148,12 @@ module.exports = {
       //RJ added for auto compiling of sass
       //https://github.com/jtangelder/sass-loader
       {
+            test: /\.scss$/,
+            loader: 'style!css!sass'
+      },
+      {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loader: ExtractTextPlugin.extract("style-loader", "css!sass")
       }
     ]
   },

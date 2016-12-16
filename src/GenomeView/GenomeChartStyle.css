@@ -1,0 +1,65 @@
+html, body {
+  background-color: #f9f9f9; }
+
+.labor_enter {
+  fill: rgba(255, 138, 128, 0.5); }
+  .labor_enter:hover {
+    fill: #ff2c1a; }
+
+.labor_leave {
+  fill: rgba(255, 128, 171, 0.5); }
+  .labor_leave:hover {
+    fill: #ff1a68; }
+
+.finance_acq {
+  fill: rgba(234, 128, 252, 0.5); }
+  .finance_acq:hover {
+    fill: #da1cfa; }
+
+.finance_inv {
+  fill: rgba(149, 117, 205, 0.5); }
+  .finance_inv:hover {
+    fill: #603ba1; }
+
+.finance_frd {
+  fill: rgba(121, 134, 203, 0.5); }
+  .finance_frd:hover {
+    fill: #3e4ea0; }
+
+.marketing_prd {
+  fill: rgba(79, 195, 247, 0.5); }
+  .marketing_prd:hover {
+    fill: #0a97d6; }
+
+.tooltip {
+  position: absolute;
+  text-align: left;
+  min-width: 80px;
+  height: auto;
+  padding: 8px;
+  font: 12px Helvetica;
+  background: rgba(38, 50, 56, 0.8);
+  color: #CFD8DC;
+  border: 0px;
+  border-radius: 5px;
+  pointer-events: none; }
+
+.rj-label {
+  font-size: 24px;
+  font-weight: bold; }
+
+.rj-panel {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 32px; }
+
+.rj-panel-header {
+  display: flex;
+  justify-content: space-between; }
+
+.stick.highlighted {
+  fill: #FCD736;
+  z-index: 999; }
+
+/*# sourceMappingURL=GenomeChartStyle.css.map */

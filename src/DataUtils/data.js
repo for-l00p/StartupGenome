@@ -11,7 +11,7 @@ function filter(title) {
 }
 
 export function getGenes(companyObj) {
-    console.log(companyObj);
+    // console.log(companyObj);
     var obj = companyObj;
     var perma = obj.perma;
     var name = obj.Name;
@@ -174,7 +174,7 @@ export function getGenes(companyObj) {
     };
     if (products !== undefined) {
         products.forEach(function(product, index) {
-            console.log(product);
+            // console.log(product);
             if (product.launch) {
                 var prdObj = {
                     date: new Date(product.launch),

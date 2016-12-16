@@ -2,7 +2,7 @@ import React from 'react';
 import * as d3 from "d3";
 import { Button, Glyphicon} from 'react-bootstrap';
 import ReactFauxDOM from 'react-faux-dom'
-import './GenomeChartStyle.scss';
+import './GenomeChartStyle.css';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin(); //Needed for onTouchTap  http://stackoverflow.com/a/34015469/988941
